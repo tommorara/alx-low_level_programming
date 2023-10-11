@@ -1,11 +1,12 @@
-#include <stdio.h>
+#include "main.h"
 /**
-* main - Entry point
+* main - putchar is a local function that displays text on the screen
 *
 * Return: Always 0 (success)
 */
 	int main(void)
 {
-	printf("_putchar\n");
+	_putchar('_');
+	_putchar('\n');
 	return (0);
 }
