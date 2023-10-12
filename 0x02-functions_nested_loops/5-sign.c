@@ -1,7 +1,7 @@
 #include "main.h"
 /**
-* print_sign - prints the the coresponding sign of a number
-* @n: for checking int
+* print_sign - the functio prints either the +ve or -ve sign of a no.
+* @n: checks the int
 * Return: 1 and prints + if n is greater than zero
 */
 int print_sign(int n)
