@@ -1,13 +1,10 @@
 #include "main.h"
 
 /**
-*
+* _strncat - The function copies a string
 * @n: Function parameter
-*
 * @src: Function parameter
-*
 * @dest: Function parammeter
-*
 * Return: dest
 */
 
