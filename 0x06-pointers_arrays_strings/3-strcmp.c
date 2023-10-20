@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * @s1: Function parameter
- * @s2: Function parameter
- * Return: s1, s2
- */
+* _strcmp - compares two string
+* @s1: Function parameter
+* @s2: Function parameter
+* Return: s1, s2
+*/
 int _strcmp(char *s1, char *s2)
 {
 int k = 0;
