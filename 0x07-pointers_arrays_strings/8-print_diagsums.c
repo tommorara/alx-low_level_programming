@@ -10,20 +10,17 @@
 
 void print_diagsums(int *a, int size)
 {
-	int count1;
-	int count2;
-	int x;
+	int sum1 = 0;  /* Sum of the main diagonal*/
+	int sum2 = 0;  /* Sum of the other diagonal*/
 
-	count1 = 0;
-	count2 = 0;
+	for (int i = 0; i < size; i++)
+	{
+	/* Sum of the main diagonal (top-left to bottom-right)*/
+	sum1 += a[i * size + i];
 
-	for (x = 0; x < size; x++)
-	{
-	count1 = count1 + a[x * size + x];
+	/* Sum of the other diagonal (top-right to bottom-left)*/
+	sum2 += a[i * size + (size - 1 - i)];
 	}
-	for (x = size - 1; x >= 0; x--)
-	{
-	count2 += a[x * size + (size - x - 1)];
-	}
-	printf("%d, %d\n", count1, count2);
+
+printf("%d, %d\n", sum1, sum2);
 }
