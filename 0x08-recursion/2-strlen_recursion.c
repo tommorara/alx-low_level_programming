@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * main - check the code
- * @s*: the stringed to be checked
- * Return: 
+ * _strlen_recursion - function that returns the length of a string.
+ * @s: the stringed to be checked
+ * Return: an integer
  */
 
 int _strlen_recursion(char *s)
 {
-	
+
 	if (*s)
 	{
 	lnt++;
