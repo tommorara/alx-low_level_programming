@@ -1,17 +1,21 @@
-extern	printf		; the C function, to be called
-section .data
-    hello db "Hello, Holberton",0 ; Define the string to be printed
-    format db "%s",10,0           ; Define the format string with a newline character
+	extern printf
 
-section .text
-    global main                   ; Entry point for the program
-    extern printf                ; Declare the printf function from the C library
+	section .data
+message:	db "Hello, Holberton", 0
+format:		db "%s", 10, 0
 
+	section	.text
+
+	global main
 main:
-    push rbp                      ; Save the base pointer
-    mov rdi, format               ; Load the address of the format string into rdi
-    mov rsi, hello                ; Load the address of the hello string into rsi
-    call printf                   ; Call the printf function to print the formatted string
-    pop rbp                       ; Restore the base pointer
-    ret                           ; Return from the main function
+	push	rbp
 
+	mov	rax, 0
+	mov	rdi,format
+	mov	rsi,message
+	call	printf
+
+	pop	rbp
+
+	mov	rax, 0
+	ret
