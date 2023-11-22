@@ -1,62 +1,39 @@
 #include "lists.h"
-/**
- * free_listptr-free linked list
- * @head: pointer to the pointer to the head of the linked list
- * Return:void
- */
-void free_listptr(listptr_t **head)
-{
-	listptr_t *temp, *present;
 
-	if (head != NULL)
-	{
-		present = *head;
-		while ((temp = present) != NULL)
-		{
-			present = present->next;
-			free(temp);
-		}
-		*head = NULL;
-	}
-}
 /**
- * print_listint_safe-a function that prints
- * a listint_t linked list
- * @head: pointer to the head of the linked list
+ * print_listint_safe - prints a listint_t linked list.
+ * @head: the pointer to the first elt of the list
  * Return: the number of nodes in the list
- * This function can print lists with a loop
- * You should go through the list only once
- * If the function fails, exit the program with status 98
  */
+
+
 size_t print_listint_safe(const listint_t *head)
 {
-	listptr_t *slow_ptr, *fast_ptr, *begin_loop;
-	size_t Q = 0;
+	const listint_t *tortoise = NULL;
+	const listint_t *hare = NULL;
+	size_t counter = 0;
+	size_t new_n;
 
-	slow_ptr = NULL;
-	while (head != NULL)
+	tortoise = head;
+	while (tortoise != NULL)
 	{
-		fast_ptr = malloc(sizeof(listptr_t));
-		if (fast_ptr == NULL)
-			exit(98);
-		fast_ptr->ptr = (void *)head;
-		fast_ptr->next = slow_ptr;
-		slow_ptr = fast_ptr;
-		begin_loop = slow_ptr;
-		while (begin_loop->next != NULL)
+		printf("[%p] %d\n", (void *)tortoise, tortoise->n);
+		counter++;
+		tortoise = tortoise->next;
+		hare = head;
+		new_n = 0;
+		while (new_n < counter)
 		{
-			begin_loop = begin_loop->next;
-			if (head == begin_loop->ptr)
+			if (tortoise == hare)
 			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_listptr(&slow_ptr);
-				return (Q);
+				printf("-> [%p] %d\n", (void *)tortoise, tortoise->n);
+				return (counter);
 			}
+			hare = hare->next;
+			new_n++;
 		}
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		Q++;
+		if (!(head))
+			exit(98);
 	}
-	free_listptr(&slow_ptr);
-	return (Q);
+	return (counter);
 }
