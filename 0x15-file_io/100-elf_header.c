@@ -1,4 +1,10 @@
-#include "main.h"
+#include <sys/stat.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <elf.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <sys/types.h>
 
 void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
