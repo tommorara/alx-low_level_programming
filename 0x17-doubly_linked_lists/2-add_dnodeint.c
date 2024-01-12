@@ -10,7 +10,7 @@
  * Return: If the function fails - NULL.
  *         Otherwise - the address of the new element.
  */
-list_t *add_node(list_t **head, const char *str)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	char *dup;
 	int len;
