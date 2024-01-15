@@ -1,0 +1,1 @@
+The "0x18. C - Dynamic Libraries" project, overseen by Julien Barbier, is an educational initiative focused on the comprehension and application of dynamic libraries in C programming. Scheduled to start on January 15, 2024, and conclude within a 24-hour window, the project aims to impart in-depth knowledge and practical skills regarding dynamic libraries.
