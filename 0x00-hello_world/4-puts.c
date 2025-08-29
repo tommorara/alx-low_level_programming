@@ -1,12 +1,14 @@
-#include<stdio.h>
+#include <stdio.h>
 /**
- * main - Entry point
+ * main - Entry point of the program
  *
- * Return: Always 0 (Success)
+ * Description: This program prints the message
+ * "Learning C step by step " followed by a newline,
+ * using the puts function.
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle");
+	puts("Learning C step by step");
 	return (0);
 }
-
